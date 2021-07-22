@@ -1,0 +1,5 @@
+<form class="form-inline" #f="ngForm" (submit)="getVideoID(f)">
+  <input class="form-control" type="text" id="url" ngModel name="url" autocomplete="off"
+         placeholder="Enter a YouTube video URL" required>
+  <button class="btn btn-outline-primary" type="submit">Play!</button>
+</form>

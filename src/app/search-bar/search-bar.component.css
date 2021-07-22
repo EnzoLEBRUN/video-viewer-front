@@ -1,0 +1,12 @@
+form {
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  width: 74.5% !important;
+}
+
+button {
+  width: 24.5%;
+}
