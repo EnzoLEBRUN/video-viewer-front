@@ -10,3 +10,9 @@ input {
 button {
   width: 24.5%;
 }
+
+@media (max-width: 500px) {
+  button, input {
+    font-size: 12px;
+  }
+}

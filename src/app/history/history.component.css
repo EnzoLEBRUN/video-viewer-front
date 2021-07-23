@@ -1,0 +1,68 @@
+table {
+  display: contents;
+  width: 100%;
+  letter-spacing: 1px;
+  font-size: .8rem;
+}
+
+thead, tbody {
+  display: block;
+  border: 1px solid #ced4da;
+}
+
+tbody {
+  height: 349.5px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+a {
+  display: contents;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+tr {
+  display: grid;
+}
+
+th, td {
+  min-width: 100%;
+  padding: 10px;
+}
+
+th {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+}
+
+.bookmark-button {
+  border: 1px solid #ced4da;
+}
+
+.bookmark-button:hover {
+  background-color: #ced4da;
+}
+
+td:hover {
+  background-color: lightskyblue;
+}
+
+td > em {
+  font-style: normal;
+  color: rgba(0,0,0,.5);
+}
+
+@media (max-width: 1200.5px) {
+  tbody {
+    height: 282px;
+  }
+}
+
+@media (max-width: 500px) {
+  td, th {
+    font-size: 12px;
+  }
+}

@@ -1,1 +1,26 @@
-<p>history works!</p>
+<table>
+  <thead>
+    <tr>
+      <th>
+        Video history
+        <form class="form-inline form-button" #f="ngForm" (submit)="addToBookmark(f)">
+          <button class="btn bookmark-button" type="submit">
+            <img src="assets/bookmark.png" width="30" height="25" alt="Add to the bookmark">
+          </button>
+        </form>
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <a href="" title="">
+        <td>
+          https://www.youtube.com/watch?v=00000000000
+          <br>
+          <em>Date: 00:00 - 00/00/0000</em>
+        </td>
+      </a>
+    </tr>
+  </tbody>
+</table>

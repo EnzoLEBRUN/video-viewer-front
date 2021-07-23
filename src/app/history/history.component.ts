@@ -12,4 +12,8 @@ export class HistoryComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addToBookmark(f: any): void {
+
+  }
+
 }
