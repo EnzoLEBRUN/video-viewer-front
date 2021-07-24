@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedService } from "../shared.service";
-import { Subscription } from "rxjs";
-import { DomSanitizer } from "@angular/platform-browser";
+import { DomSanitizer } from '@angular/platform-browser';
+import { SharedService } from '../shared.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'videoView',
@@ -13,16 +13,18 @@ export class VideoViewComponent implements OnInit {
   public embed: any;
   private videoEventSubscription: Subscription;
 
-  constructor(private shared: SharedService, private _sanitizer: DomSanitizer) {
+  constructor(private _sanitizer: DomSanitizer, private shared: SharedService) {
     this.videoEventSubscription = this.shared.receiveVideoEvent().subscribe(() => {
       this.ngOnInit();
     });
   }
 
   ngOnInit(): void {
-    this.embed = this._sanitizer.bypassSecurityTrustResourceUrl(
-      'https://www.youtube.com/embed/' + this.shared.getVideoID()
-    );
+    if (this.shared.getVideoURL()) {
+      this.embed = this._sanitizer.bypassSecurityTrustResourceUrl(
+        this.shared.getVideoURL()['video_url']
+      );
+    }
   }
 
 }

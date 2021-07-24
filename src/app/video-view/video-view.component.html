@@ -1,3 +1,7 @@
-<div class="video-container">
+<div class="not-video-container" *ngIf='!embed'>
+  <h2>Video player</h2>
+</div>
+
+<div class="video-container" *ngIf='embed'>
   <iframe [src]='embed' allowfullscreen></iframe>
 </div>

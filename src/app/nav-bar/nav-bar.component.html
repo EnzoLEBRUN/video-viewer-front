@@ -9,7 +9,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link mr-sm-2" routerLink="/bookmarks" title="Display all bookmarks">Show the bookmarks</a>
+        <a class="nav-link mr-sm-2" routerLink="/bookmarks" title="Display all bookmarks">
+          Show the bookmarks
+          <span class="badge badge-danger">{{ nbBookmarks }}</span>
+        </a>
       </li>
     </ul>
   </div>

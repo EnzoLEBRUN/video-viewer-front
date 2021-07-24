@@ -6,14 +6,17 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <a href="" title="">
+      <tr *ngFor="let bookmark of bookmarks">
+        <span (click)="clickBookmark(bookmark)">
           <td>
-            https://www.youtube.com/watch?v=00000000000
+            {{ bookmark.url }}
             <br>
-            <em>Date: 00:00 - 00/00/0000</em>
+            <em>Date: {{ bookmark.created_at | date:'medium' }}</em>
+            <form class="form-inline form-button" #f="ngForm" (submit)="deleteBookmark(bookmark)">
+              <button class="btn bookmark-delete-button" type="submit">X</button>
+            </form>
           </td>
-        </a>
+        </span>
       </tr>
     </tbody>
   </table>

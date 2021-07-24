@@ -7,7 +7,8 @@ import { Observable, Subject } from "rxjs";
 export class SharedService {
 
   private subject = new Subject<any>();
-  videoID: any;
+  private subjectBookmark = new Subject<any>();
+  videoURL: any;
 
   constructor() { }
 
@@ -19,12 +20,19 @@ export class SharedService {
     this.subject.next();
   }
 
-  getVideoID() {
-    return this.videoID;
+  receiveBookmarkVideoEvent(): Observable<any> {
+    return this.subjectBookmark.asObservable();
   }
 
-  setVideoID(id: any) {
-    this.videoID = id;
+  sendBookmarkVideoEvent() {
+    this.subjectBookmark.next();
   }
 
+  getVideoURL() {
+    return this.videoURL;
+  }
+
+  setVideoURL(url: any) {
+    this.videoURL = url;
+  }
 }

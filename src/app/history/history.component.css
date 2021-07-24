@@ -16,10 +16,12 @@ tbody {
   overflow-y: scroll;
 }
 
-a {
+span {
   display: contents;
-  color: inherit;
-  text-decoration: inherit;
+}
+
+span:hover {
+  cursor: pointer;
 }
 
 tr {

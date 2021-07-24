@@ -17,10 +17,12 @@ tbody {
   overflow-y: scroll;
 }
 
-a {
+span {
   display: contents;
-  color: inherit;
-  text-decoration: inherit;
+}
+
+span:hover {
+  cursor: pointer;
 }
 
 tr {
@@ -46,6 +48,24 @@ td:hover {
 td > em {
   font-style: normal;
   color: rgba(0,0,0,.5);
+}
+
+td {
+  position: relative;
+}
+
+.bookmark-delete-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-10px, 25%);
+  color: rgba(0,0,0,.5);
+  font-weight: bold;
+}
+
+.bookmark-delete-button:hover {
+  color: #fff;
+  background-color: #dc3545;
 }
 
 @media (max-width: 500px) {

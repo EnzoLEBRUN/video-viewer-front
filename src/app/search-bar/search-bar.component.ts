@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedService } from "../shared.service";
+import { environment } from 'src/environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'searchBar',
@@ -8,15 +10,27 @@ import { SharedService } from "../shared.service";
 })
 export class SearchBarComponent implements OnInit {
 
-  constructor(private shared: SharedService) { }
+  constructor(private http: HttpClient, private shared: SharedService) { }
 
   ngOnInit(): void {
   }
 
-  getVideoID(url: any): void {
-    let videoID = url.value['url'].split('=');
-    this.shared.setVideoID(videoID[1]);
-    this.shared.sendVideoEvent();
+  play(url: any): void {
+    if (url.value['url']) {
+      let videoURL = {
+        url: url.value['url']
+      };
+      this.addHistory(videoURL);
+    }
+  }
+
+  addHistory(url: any): any {
+    this.http.post(environment.apiURL + 'histories', url).toPromise().then(data => {
+      this.shared.setVideoURL(data);
+      this.shared.sendVideoEvent();
+
+      return data;
+    });
   }
 
 }
